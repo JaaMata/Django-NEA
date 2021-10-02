@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% endblock head %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    {% if errors %}
+    <ul>
+        <li>{{errors}}</li>
+    </ul>
+    {% endif %}
+
+    <button type="submit">Login</button>
+</form>
+{% endblock content %}
